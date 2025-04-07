@@ -1,0 +1,13 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: rgb(255, 152, 152);
+}
+
+body {
+  margin: 0;
+}
