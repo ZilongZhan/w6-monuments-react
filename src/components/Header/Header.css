@@ -1,8 +1,18 @@
 .main-header {
   display: flex;
-  margin: 0 auto;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+
+  @media (width >= 600px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .title-container {

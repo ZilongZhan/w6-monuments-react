@@ -1,3 +1,4 @@
+import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
 const Header: React.FC = () => {
@@ -7,6 +8,7 @@ const Header: React.FC = () => {
         <img src="monument.svg" alt="Website logo" className="page-logo" />
         <h1 className="page-title">monuments.</h1>
       </div>
+      <Navigation />
     </header>
   );
 };
