@@ -1,0 +1,30 @@
+.navigation {
+  font-size: 1.7rem;
+  width: 100%;
+
+  @media (width >= 600px) {
+    width: fit-content;
+  }
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (width >= 600px) {
+    gap: 20px;
+  }
+}
+
+.navigation-list__item {
+  padding: 5px 10px;
+  transition: all 0.3s;
+  border-radius: 10px;
+  background-color: rgb(255, 173, 173);
+
+  &:hover {
+    color: inherit;
+    background-color: rgb(255, 198, 198);
+    box-shadow: 3px 3px 4px rgb(142, 75, 75);
+  }
+}
