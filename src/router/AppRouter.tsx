@@ -3,11 +3,11 @@ import App from "../components/App/App";
 
 const AppRouter: React.FC = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/home" element={<App />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<App />}>
+        <Route index path="/home" />
+      </Route>
+    </Routes>
   );
 };
 
