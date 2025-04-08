@@ -10,4 +10,11 @@
 
 body {
   margin: 0;
+  font-family: "Outfit Variable", sans-serif;
+  color: rgb(173, 39, 39);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
