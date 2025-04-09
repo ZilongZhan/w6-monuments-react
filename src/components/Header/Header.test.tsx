@@ -11,7 +11,7 @@ describe("Given the Header component", () => {
         </MemoryRouter>,
       );
 
-      const pageTitle = screen.queryByRole("heading", {
+      const pageTitle = screen.getByRole("heading", {
         name: /monuments./i,
         level: 1,
       });
@@ -26,7 +26,7 @@ describe("Given the Header component", () => {
         </MemoryRouter>,
       );
 
-      const pageLogo = screen.queryByAltText("Website logo");
+      const pageLogo = screen.getByAltText("Website logo");
 
       expect(pageLogo).toBeVisible();
     });

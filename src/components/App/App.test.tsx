@@ -12,7 +12,7 @@ describe("Given the App componenet", () => {
         </MemoryRouter>,
       );
 
-      const pageTitle = screen.queryByRole("heading", {
+      const pageTitle = screen.getByRole("heading", {
         name: /monuments./i,
         level: 1,
       });
@@ -27,7 +27,7 @@ describe("Given the App componenet", () => {
         </MemoryRouter>,
       );
 
-      const pageLogo = screen.queryByAltText("Website logo");
+      const pageLogo = screen.getByAltText("Website logo");
 
       expect(pageLogo).toBeVisible();
     });
