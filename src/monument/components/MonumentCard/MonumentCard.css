@@ -1,0 +1,43 @@
+.monument {
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 4px 4px 4px rgb(220, 154, 154);
+  transition: all 0.5s;
+  height: 100%;
+  justify-content: space-between;
+
+  &:hover {
+    transform: rotate(2deg);
+  }
+}
+
+.monument__name {
+  margin: 0;
+}
+
+.monument__image {
+  box-shadow: 4px 4px 4px rgb(212, 209, 209);
+}
+
+.monument-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.monument__description {
+  margin: 0;
+}
+
+.monument__location {
+  padding: 5px 10px;
+  background-color: rgb(255, 228, 200);
+  border-radius: 3px;
+  align-self: flex-end;
+  font-weight: bold;
+  color: rgb(253, 69, 69);
+}
