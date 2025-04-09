@@ -11,7 +11,7 @@ describe("Given the Navigation component", () => {
         </MemoryRouter>,
       );
 
-      const homeLink = screen.queryByRole("link", { name: /home/i });
+      const homeLink = screen.getByRole("link", { name: /home/i });
 
       expect(homeLink).toBeVisible();
     });
