@@ -1,0 +1,51 @@
+.monument-form {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  display: grid;
+  row-gap: 15px;
+  column-gap: 40px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  box-shadow: 4px 4px 4px rgb(220, 154, 154);
+
+  @media (width >= 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.monument-form__label {
+  font-weight: bold;
+}
+
+.monument-form__input {
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: rgb(233, 233, 233);
+  min-width: 100%;
+}
+
+.button {
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  justify-self: flex-end;
+  align-self: flex-end;
+  background-color: rgb(103, 32, 32);
+  transition: all 0.3s;
+  font-weight: bold;
+
+  &:hover {
+    background-color: rgb(253, 69, 69);
+  }
+
+  &:focus {
+    outline: 3px solid rgb(255, 54, 235);
+  }
+}
