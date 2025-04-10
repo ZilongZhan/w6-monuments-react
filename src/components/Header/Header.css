@@ -1,18 +1,7 @@
 .main-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: fit-content;
-  margin: 0 auto;
-
-  @media (width >= 600px) {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+  justify-content: space-between;
 }
 
 .title-container {
@@ -34,4 +23,19 @@
 
 .page-title {
   text-transform: uppercase;
+  user-select: none;
+}
+
+.page-title--long {
+  display: none;
+
+  @media (width >= 500px) {
+    display: inline;
+  }
+}
+
+.page-title--short {
+  @media (width >= 500px) {
+    display: none;
+  }
 }
