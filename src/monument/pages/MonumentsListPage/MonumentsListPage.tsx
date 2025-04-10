@@ -13,7 +13,12 @@ const MonumentsListPage: React.FC = () => {
     });
   }, []);
 
-  return <MonumentCardsList monuments={monuments} />;
+  return (
+    <>
+      <h2 className="page-title">Home</h2>
+      <MonumentCardsList monuments={monuments} />
+    </>
+  );
 };
 
 export default MonumentsListPage;

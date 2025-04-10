@@ -31,17 +31,14 @@ a {
   text-decoration: none;
 }
 
-.main-header,
-.main-content {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 20px;
+input,
+textarea {
+  border: none;
+  font: inherit;
+}
 
-  @media (width >= 500px) {
-    padding: 0 50px;
-  }
-
-  @media (width >= 1000px) {
-    padding: 0 120px;
-  }
+button {
+  border: none;
+  background: none;
+  font: inherit;
 }

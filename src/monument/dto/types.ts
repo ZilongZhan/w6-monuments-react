@@ -1,8 +1,3 @@
-export interface MonumentDto {
-  id: string;
-  name: string;
-  description: string;
-  imageUrl: string;
-  city: string;
-  country: string;
-}
+import { Monument } from "../types";
+
+export type MonumentDto = Omit<Monument, "imageAlt">;
