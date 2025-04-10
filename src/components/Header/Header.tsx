@@ -7,7 +7,8 @@ const Header: React.FC = () => {
     <header className="main-header">
       <div className="title-container">
         <img src="monument.svg" alt="Website logo" className="page-logo" />
-        <h1 className="page-title">monuments.</h1>
+        <h1 className="page-title page-title--long">monuments.</h1>
+        <h1 className="page-title page-title--short">mnmnts.</h1>
       </div>
       <Navigation />
     </header>
