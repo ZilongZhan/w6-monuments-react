@@ -8,9 +8,18 @@ export default defineConfig({
     target: "ESNext",
   },
   test: {
+    root: "src",
     globals: true,
     environment: "jsdom",
     reporters: ["verbose"],
-    setupFiles: "src/setupTests.ts",
+    setupFiles: "setupTests.ts",
+    coverage: {
+      enabled: true,
+      provider: "v8",
+      reporter: ["text", "html"],
+      reportsDirectory: "../coverage",
+      include: ["**/*.{ts,tsx}"],
+      exclude: ["main.tsx"],
+    },
   },
 });
