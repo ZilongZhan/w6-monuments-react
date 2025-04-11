@@ -9,10 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test:dev": "vitest --coverage.enabled=false",
+    "test:dev": "vitest",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui --coverage"
+    "test:coverage": "vitest run --coverage.enabled=true",
+    "test:ui": "vitest --ui --coverage.enabled-true"
   },
   "dependencies": {
     "@fontsource-variable/outfit": "^5.2.5",

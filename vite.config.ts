@@ -14,7 +14,7 @@ export default defineConfig({
     reporters: ["verbose"],
     setupFiles: "setupTests.ts",
     coverage: {
-      enabled: true,
+      enabled: false,
       provider: "v8",
       reporter: ["text", "html"],
       reportsDirectory: "../coverage",
