@@ -1,14 +1,26 @@
 .monument-form {
-  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
   max-width: 1000px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  box-shadow: 4px 4px 4px rgb(220, 154, 154);
   padding: 20px;
+}
+
+.monument-form__title {
+  font-size: 1.7rem;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.monument-form__fieldset {
   display: grid;
   row-gap: 15px;
   column-gap: 40px;
   border: none;
-  background-color: rgb(255, 255, 255);
-  border-radius: 3px;
-  box-shadow: 4px 4px 4px rgb(220, 154, 154);
+  padding: 0;
 
   @media (width >= 850px) {
     grid-template-columns: repeat(2, 1fr);
