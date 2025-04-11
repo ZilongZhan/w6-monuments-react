@@ -7,3 +7,5 @@ export interface Monument {
   city: string;
   country: string;
 }
+
+export type MonumentData = Omit<Monument, "id" | "imageAlt">;
