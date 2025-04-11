@@ -11,7 +11,7 @@ const MonumentCard: React.FC<MonumentCardProps> = ({
 }) => {
   return (
     <article className="monument">
-      <h2 className="monument__name">{name}</h2>
+      <h3 className="monument__name">{name}</h3>
       <img
         className="monument__image"
         src={imageUrl}

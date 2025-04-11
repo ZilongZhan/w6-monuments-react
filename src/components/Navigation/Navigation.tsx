@@ -11,6 +11,11 @@ const Navigation: React.FC = () => {
             Home
           </NavLink>
         </li>
+        <li>
+          <NavLink className="navigation-list__item" to="/add-monument">
+            Add monument
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

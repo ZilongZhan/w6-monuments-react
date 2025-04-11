@@ -3,7 +3,7 @@ import MonumentCardsList from "../../components/MonumentCardsList/MonumentCardsL
 import { useEffect, useState } from "react";
 import { Monument } from "../../types";
 
-const MonumentsListPage: React.FC = () => {
+const MonumentsHomePage: React.FC = () => {
   const [monuments, setMonuments] = useState<Monument[]>([]);
 
   useEffect(() => {
@@ -13,7 +13,12 @@ const MonumentsListPage: React.FC = () => {
     });
   }, []);
 
-  return <MonumentCardsList monuments={monuments} />;
+  return (
+    <>
+      <h2 className="page-title">Home</h2>
+      <MonumentCardsList monuments={monuments} />
+    </>
+  );
 };
 
-export default MonumentsListPage;
+export default MonumentsHomePage;

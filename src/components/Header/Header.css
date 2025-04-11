@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.page-logo {
+.app-logo {
   width: 25px;
   box-shadow: 2px 2px 3px rgb(142, 75, 75);
   transition: all 0.2s;
@@ -21,12 +21,12 @@
   }
 }
 
-.page-title {
+.app-title {
   text-transform: uppercase;
   user-select: none;
 }
 
-.page-title--long {
+.app-title--long {
   display: none;
 
   @media (width >= 500px) {
@@ -34,7 +34,7 @@
   }
 }
 
-.page-title--short {
+.app-title--short {
   @media (width >= 500px) {
     display: none;
   }
