@@ -12,12 +12,12 @@ describe("Given the App componenet", () => {
         </MemoryRouter>,
       );
 
-      const pageTitle = screen.getByRole("heading", {
+      const appTitle = screen.getByRole("heading", {
         name: /monuments./i,
         level: 1,
       });
 
-      expect(pageTitle).toBeVisible();
+      expect(appTitle).toBeVisible();
     });
 
     test("Then it should show a webside logo", () => {
