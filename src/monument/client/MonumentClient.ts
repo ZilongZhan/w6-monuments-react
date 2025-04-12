@@ -1,6 +1,9 @@
-import { mapMonumentsDtoToMonuments } from "../dto/mappers";
+import {
+  mapMonumentDtoToMonument,
+  mapMonumentsDtoToMonuments,
+} from "../dto/mappers";
 import { MonumentDto } from "../dto/types";
-import { Monument } from "../types";
+import { Monument, MonumentData } from "../types";
 import { MonumentClientStructure } from "./types";
 
 class MonumentClient implements MonumentClientStructure {
@@ -18,6 +21,22 @@ class MonumentClient implements MonumentClientStructure {
     };
 
     return mapMonumentsDtoToMonuments(monumentsDto);
+  }
+
+  async createMonument(monumentData: MonumentData): Promise<Monument> {
+    const response = await fetch(`${this.monumentAPI}/create`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(monumentData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error creating monument");
+    }
+
+    const monumentDto = (await response.json()) as MonumentDto;
+
+    return mapMonumentDtoToMonument(monumentDto);
   }
 }
 
