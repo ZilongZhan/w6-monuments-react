@@ -60,4 +60,10 @@
   &:focus {
     outline: 3px solid rgb(255, 54, 235);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: rgb(103, 32, 32);
+    opacity: 0.5;
+  }
 }

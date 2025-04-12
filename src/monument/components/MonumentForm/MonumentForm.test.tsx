@@ -1,3 +1,4 @@
+import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
 import MonumentForm from "./MonumentForm";
 
@@ -27,6 +28,20 @@ describe("Given the MonumentForm component", () => {
       });
 
       expect(createMonumentButton).toBeVisible();
+    });
+  });
+
+  describe("When the user types 'Hello World' inside 'Name' input", () => {
+    test("Then it should show 'Hello World' inside 'Name' input", async () => {
+      const expectedInput = "Hello World";
+
+      render(<MonumentForm />);
+
+      const nameInput = screen.getByLabelText(/^name/i);
+
+      await userEvent.type(nameInput, expectedInput);
+
+      expect(nameInput).toHaveValue(expectedInput);
     });
   });
 });

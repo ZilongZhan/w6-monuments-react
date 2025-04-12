@@ -1,8 +1,21 @@
+import useMonuentForm from "../../hooks/useMonumentForm";
+
 import "./MonumentForm.css";
 
 const MonumentForm: React.FC = () => {
+  const {
+    monumentData: { city, country, description, imageUrl, name },
+    handleOnChange,
+    handleSubmit,
+    isValidData,
+  } = useMonuentForm();
+
   return (
-    <form className="monument-form" aria-label="Add monument form">
+    <form
+      className="monument-form"
+      aria-label="Add monument form"
+      onSubmit={handleSubmit}
+    >
       <h3 className="monument-form__title">New monument</h3>
       <fieldset className="monument-form__fieldset">
         <div className="form-group">
@@ -14,6 +27,8 @@ const MonumentForm: React.FC = () => {
             id="name"
             type="string"
             required
+            value={name}
+            onChange={handleOnChange}
           />
         </div>
         <div className="form-group">
@@ -25,6 +40,8 @@ const MonumentForm: React.FC = () => {
             id="city"
             type="string"
             required
+            value={city}
+            onChange={handleOnChange}
           />
         </div>
         <div className="form-group">
@@ -36,17 +53,21 @@ const MonumentForm: React.FC = () => {
             id="country"
             type="string"
             required
+            value={country}
+            onChange={handleOnChange}
           />
         </div>
         <div className="form-group">
-          <label className="monument-form__label" htmlFor="image-url">
+          <label className="monument-form__label" htmlFor="imageUrl">
             Link to image:
           </label>
           <input
             className="monument-form__input"
-            id="image-url"
+            id="imageUrl"
             type="url"
             required
+            value={imageUrl}
+            onChange={handleOnChange}
           />
         </div>
         <div className="form-group">
@@ -58,9 +79,13 @@ const MonumentForm: React.FC = () => {
             id="description"
             rows={5}
             required
-          ></textarea>
+            value={description}
+            onChange={handleOnChange}
+          />
         </div>
-        <button className="button">Create monument</button>
+        <button className="button" disabled={!isValidData}>
+          Create monument
+        </button>
       </fieldset>
     </form>
   );
