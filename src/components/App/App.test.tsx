@@ -1,7 +1,7 @@
-import App from "./App";
-import Header from "../Header/Header";
 import { MemoryRouter } from "react-router";
 import { screen, render } from "@testing-library/react";
+import App from "./App";
+import Header from "../Header/Header";
 
 describe("Given the App componenet", () => {
   describe("When it renders", () => {

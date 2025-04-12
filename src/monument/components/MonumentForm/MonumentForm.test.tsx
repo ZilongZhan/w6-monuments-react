@@ -1,6 +1,6 @@
+import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
 import MonumentForm from "./MonumentForm";
-import userEvent from "@testing-library/user-event";
 
 describe("Given the MonumentForm component", () => {
   describe("When it renders", () => {

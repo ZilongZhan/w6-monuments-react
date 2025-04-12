@@ -1,5 +1,5 @@
-import MonumentCardsList from "../../components/MonumentCardsList/MonumentCardsList";
 import { useEffect } from "react";
+import MonumentCardsList from "../../components/MonumentCardsList/MonumentCardsList";
 import useMonuments from "../../hooks/useMonuments";
 
 const MonumentsHomePage: React.FC = () => {
