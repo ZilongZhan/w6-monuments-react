@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import MonumentFormPage from "./MonumentFormPage";
 import { MemoryRouter } from "react-router";
+import MonumentFormPage from "./MonumentFormPage";
 import MonumentsContextProvider from "../../context/MonumentsContextProvider";
 
 describe("Given the MonumentFormPage component", () => {

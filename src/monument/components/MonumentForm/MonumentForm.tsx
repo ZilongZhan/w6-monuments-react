@@ -29,6 +29,7 @@ const MonumentForm: React.FC = () => {
             required
             value={name}
             onChange={handleOnChange}
+            autoComplete="name"
           />
         </div>
         <div className="form-group">
@@ -55,6 +56,7 @@ const MonumentForm: React.FC = () => {
             required
             value={country}
             onChange={handleOnChange}
+            autoComplete="country"
           />
         </div>
         <div className="form-group">
