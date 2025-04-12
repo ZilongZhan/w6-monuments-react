@@ -1,39 +1,13 @@
-import { useState } from "react";
-import { MonumentData } from "../../types";
 import "./MonumentForm.css";
+import useMonuentForm from "../../hooks/useMonumentForm";
 
 const MonumentForm: React.FC = () => {
-  const initialMonumentData: MonumentData = {
-    name: "",
-    description: "",
-    imageUrl: "",
-    city: "",
-    country: "",
-  };
-
-  const [monument, setMonument] = useState<MonumentData>(initialMonumentData);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-  };
-
-  const handleOnChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const monumentData = {
-      ...monument,
-      [event.target.id]: event.target.value,
-    };
-
-    setMonument(monumentData);
-  };
-
-  const isValidData =
-    monument.name !== "" &&
-    monument.description !== "" &&
-    monument.city !== "" &&
-    monument.imageUrl !== "" &&
-    monument.country !== "";
+  const {
+    monumentData: { city, country, description, imageUrl, name },
+    handleOnChange,
+    handleSubmit,
+    isValidData,
+  } = useMonuentForm();
 
   return (
     <form
@@ -52,7 +26,7 @@ const MonumentForm: React.FC = () => {
             id="name"
             type="string"
             required
-            value={monument.name}
+            value={name}
             onChange={handleOnChange}
           />
         </div>
@@ -65,7 +39,7 @@ const MonumentForm: React.FC = () => {
             id="city"
             type="string"
             required
-            value={monument.city}
+            value={city}
             onChange={handleOnChange}
           />
         </div>
@@ -78,7 +52,7 @@ const MonumentForm: React.FC = () => {
             id="country"
             type="string"
             required
-            value={monument.country}
+            value={country}
             onChange={handleOnChange}
           />
         </div>
@@ -91,7 +65,7 @@ const MonumentForm: React.FC = () => {
             id="imageUrl"
             type="url"
             required
-            value={monument.imageUrl}
+            value={imageUrl}
             onChange={handleOnChange}
           />
         </div>
@@ -104,7 +78,7 @@ const MonumentForm: React.FC = () => {
             id="description"
             rows={5}
             required
-            value={monument.description}
+            value={description}
             onChange={handleOnChange}
           />
         </div>
