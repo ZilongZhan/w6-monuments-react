@@ -1,6 +1,6 @@
 import { Monument, MonumentData } from "../types";
 
-export interface MonumentClientStructure {
+export interface MonumentsClientStructure {
   getAllMonuments: () => Promise<Monument[]>;
   createMonument: (monumentData: MonumentData) => Promise<Monument>;
 }

@@ -4,13 +4,13 @@ import {
 } from "../dto/mappers";
 import { MonumentDto } from "../dto/types";
 import { Monument, MonumentData } from "../types";
-import { MonumentClientStructure } from "./types";
+import { MonumentsClientStructure } from "./types";
 
-class MonumentClient implements MonumentClientStructure {
-  private monumentAPI = `${import.meta.env.VITE_BASE_URL}/monuments`;
+class MonumentsClient implements MonumentsClientStructure {
+  private monumentsAPI = `${import.meta.env.VITE_BASE_URL}/monuments`;
 
   async getAllMonuments(): Promise<Monument[]> {
-    const response = await fetch(this.monumentAPI);
+    const response = await fetch(this.monumentsAPI);
 
     if (!response.ok) {
       throw new Error("Error fetching monuments");
@@ -24,7 +24,7 @@ class MonumentClient implements MonumentClientStructure {
   }
 
   async createMonument(monumentData: MonumentData): Promise<Monument> {
-    const response = await fetch(`${this.monumentAPI}/create`, {
+    const response = await fetch(`${this.monumentsAPI}/create`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(monumentData),
@@ -40,4 +40,4 @@ class MonumentClient implements MonumentClientStructure {
   }
 }
 
-export default MonumentClient;
+export default MonumentsClient;
