@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { MonumentData } from "../types";
 import { UseMonumentForm } from "./types";
+import useMonuments from "./useMonuments";
+import { useNavigate } from "react-router";
 
 const useMonuentForm = (): UseMonumentForm => {
+  const { addMonument } = useMonuments();
+  const navigate = useNavigate();
+
   const initialMonumentData: MonumentData = {
     name: "",
     description: "",
@@ -16,6 +21,9 @@ const useMonuentForm = (): UseMonumentForm => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+
+    addMonument(monumentData);
+    navigate("/home");
   };
 
   const handleOnChange = (
