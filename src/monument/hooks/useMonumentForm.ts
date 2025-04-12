@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { MonumentData } from "../types";
 import { UseMonumentForm } from "./types";
 import useMonuments from "./useMonuments";
-import { useNavigate } from "react-router";
 
 const useMonuentForm = (): UseMonumentForm => {
   const { addMonument } = useMonuments();
