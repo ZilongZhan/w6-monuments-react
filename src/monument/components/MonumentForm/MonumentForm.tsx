@@ -82,7 +82,7 @@ const MonumentForm: React.FC = () => {
             onChange={handleOnChange}
           />
         </div>
-        <button className="button" disabled={isValidData}>
+        <button className="button" disabled={!isValidData}>
           Create monument
         </button>
       </fieldset>
