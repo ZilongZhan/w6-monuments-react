@@ -5,6 +5,11 @@
 
 .navigation {
   font-size: 1.7rem;
+  display: none;
+
+  @media (width >= 700px) {
+    display: flex;
+  }
 }
 
 .navigation-list {

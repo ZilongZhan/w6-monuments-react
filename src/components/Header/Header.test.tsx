@@ -4,8 +4,12 @@ import Header from "./Header";
 
 describe("Given the Header component", () => {
   describe("When it renders", () => {
+    const handleSetShowSidebar = vitest.fn();
+
     test("Then it should show 'MONUMENTS.' inside a level 1 heading", () => {
-      render(<Header />, { wrapper: MemoryRouter });
+      render(<Header handleSetShowSidebar={handleSetShowSidebar} />, {
+        wrapper: MemoryRouter,
+      });
 
       const pageTitle = screen.getByRole("heading", {
         name: /monuments./i,
@@ -16,7 +20,9 @@ describe("Given the Header component", () => {
     });
 
     test("Then it should show a webside logo", () => {
-      render(<Header />, { wrapper: MemoryRouter });
+      render(<Header handleSetShowSidebar={handleSetShowSidebar} />, {
+        wrapper: MemoryRouter,
+      });
 
       const pageLogo = screen.getByAltText("Website logo");
 

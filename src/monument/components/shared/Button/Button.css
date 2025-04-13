@@ -1,16 +1,19 @@
 .button {
-  background-color: rgb(103, 32, 32);
   transition: all 0.3s;
   font-weight: bold;
-  color: rgb(255, 255, 255);
   text-align: center;
+  background: none;
+}
+
+.button--square {
+  padding: 5px 10px;
+  background-color: rgb(103, 32, 32);
+  color: rgb(255, 255, 255);
+  justify-self: flex-end;
+  align-self: flex-end;
 
   &:hover {
-    background-color: rgb(253, 69, 69);
-  }
-
-  &:focus {
-    outline: 3px solid rgb(255, 54, 235);
+    opacity: 0.5;
   }
 
   &:disabled {
@@ -20,19 +23,30 @@
   }
 }
 
-.button--square {
-  padding: 5px 10px;
-  justify-self: flex-end;
-  align-self: flex-end;
-}
-
 .button--delete {
   position: absolute;
-  background-color: red;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   right: 15px;
   top: 15px;
 
   &:hover {
     opacity: 0.5;
+  }
+}
+
+.button--menu {
+  display: inline;
+  font-size: 1.8rem;
+  background: none;
+
+  @media (width >= 700px) {
+    display: none;
+  }
+}
+
+.button--close {
+  &:hover {
+    color: rgb(255, 0, 0);
   }
 }
