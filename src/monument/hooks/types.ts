@@ -8,3 +8,8 @@ export interface UseMonumentForm {
   ) => void;
   isValidData: boolean;
 }
+
+export interface UseSidebarMenu {
+  showSidebar: boolean;
+  handleSetShowSidebar: () => void;
+}
