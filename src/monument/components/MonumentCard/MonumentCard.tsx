@@ -1,4 +1,5 @@
 import { Monument } from "../../types";
+import Button from "../shared/Button/Button";
 
 import "./MonumentCard.css";
 
@@ -21,6 +22,9 @@ const MonumentCard: React.FC<MonumentCardProps> = ({
       />
       <p className="monument__description">{description}</p>
       <span className="monument__location">{`${city}, ${country}`}</span>
+      <Button action={() => {}} modifier="delete">
+        ✖
+      </Button>
     </article>
   );
 };

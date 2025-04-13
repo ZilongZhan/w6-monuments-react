@@ -43,27 +43,3 @@
   background-color: rgb(233, 233, 233);
   min-width: 100%;
 }
-
-.button {
-  padding: 5px 10px;
-  color: rgb(255, 255, 255);
-  justify-self: flex-end;
-  align-self: flex-end;
-  background-color: rgb(103, 32, 32);
-  transition: all 0.3s;
-  font-weight: bold;
-
-  &:hover {
-    background-color: rgb(253, 69, 69);
-  }
-
-  &:focus {
-    outline: 3px solid rgb(255, 54, 235);
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: rgb(103, 32, 32);
-    opacity: 0.5;
-  }
-}

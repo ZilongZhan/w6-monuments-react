@@ -1,4 +1,5 @@
 import useMonuentForm from "../../hooks/useMonumentForm";
+import Button from "../shared/Button/Button";
 
 import "./MonumentForm.css";
 
@@ -85,9 +86,9 @@ const MonumentForm: React.FC = () => {
             onChange={handleOnChange}
           />
         </div>
-        <button className="button" disabled={!isValidData}>
+        <Button type="submit" disabled={!isValidData} modifier="square">
           Create monument
-        </button>
+        </Button>
       </fieldset>
     </form>
   );
