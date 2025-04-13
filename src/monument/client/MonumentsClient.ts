@@ -38,6 +38,20 @@ class MonumentsClient implements MonumentsClientStructure {
 
     return mapMonumentDtoToMonument(monumentDto);
   }
+
+  async deleteMonument(monumentId: string): Promise<Monument> {
+    const response = await fetch(`${this.monumentsAPI}/delete/${monumentId}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Error deleting monument");
+    }
+
+    const monumentDto = (await response.json()) as MonumentDto;
+
+    return mapMonumentDtoToMonument(monumentDto);
+  }
 }
 
 export default MonumentsClient;

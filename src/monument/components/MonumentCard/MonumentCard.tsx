@@ -1,4 +1,6 @@
+import useMonuments from "../../hooks/useMonuments";
 import { Monument } from "../../types";
+import Button from "../shared/Button/Button";
 
 import "./MonumentCard.css";
 
@@ -7,8 +9,14 @@ interface MonumentCardProps {
 }
 
 const MonumentCard: React.FC<MonumentCardProps> = ({
-  monument: { name, description, imageUrl, imageAlt, city, country },
+  monument: { id, name, description, imageUrl, imageAlt, city, country },
 }) => {
+  const { removeMonument } = useMonuments();
+
+  const handleOnDelete = (): void => {
+    removeMonument(id);
+  };
+
   return (
     <article className="monument">
       <h3 className="monument__name">{name}</h3>
@@ -21,6 +29,9 @@ const MonumentCard: React.FC<MonumentCardProps> = ({
       />
       <p className="monument__description">{description}</p>
       <span className="monument__location">{`${city}, ${country}`}</span>
+      <Button action={handleOnDelete} modifier="delete">
+        ✖
+      </Button>
     </article>
   );
 };
