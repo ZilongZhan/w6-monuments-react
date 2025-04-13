@@ -1,18 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router";
 import MonumentFormPage from "./MonumentFormPage";
-import MonumentsContextProvider from "../../context/MonumentsContextProvider";
+import AllContextsProvider from "../../../test-utils/AllContextsProvider/AllContextsProvider";
 
 describe("Given the MonumentFormPage component", () => {
   describe("When it renders", () => {
     test("Then it should show 'Add new monument' inside a heading", () => {
-      render(
-        <MonumentsContextProvider>
-          <MemoryRouter>
-            <MonumentFormPage />
-          </MemoryRouter>
-        </MonumentsContextProvider>,
-      );
+      render(<MonumentFormPage />, { wrapper: AllContextsProvider });
 
       const pageTitle = screen.getByRole("heading", {
         name: /add new monument/i,
@@ -22,13 +15,7 @@ describe("Given the MonumentFormPage component", () => {
     });
 
     test("Then it should show a form to add monuments", () => {
-      render(
-        <MonumentsContextProvider>
-          <MemoryRouter>
-            <MonumentFormPage />
-          </MemoryRouter>
-        </MonumentsContextProvider>,
-      );
+      render(<MonumentFormPage />, { wrapper: AllContextsProvider });
 
       const monumentForm = screen.getByRole("form", {
         name: /add monument form/i,

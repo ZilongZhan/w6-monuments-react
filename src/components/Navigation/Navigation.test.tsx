@@ -5,11 +5,7 @@ import Navigation from "./Navigation";
 describe("Given the Navigation component", () => {
   describe("When it renders", () => {
     test("Then it should show a 'Home' link", () => {
-      render(
-        <MemoryRouter>
-          <Navigation />
-        </MemoryRouter>,
-      );
+      render(<Navigation />, { wrapper: MemoryRouter });
 
       const homeLink = screen.getByRole("link", { name: /home/i });
 

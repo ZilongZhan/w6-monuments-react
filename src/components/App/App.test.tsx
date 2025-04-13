@@ -5,11 +5,7 @@ import App from "./App";
 describe("Given the App componenet", () => {
   describe("When it renders", () => {
     test("Then it should show 'monuments.' inside a level 1 heading", () => {
-      render(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>,
-      );
+      render(<App />, { wrapper: MemoryRouter });
 
       const appTitle = screen.getByRole("heading", {
         name: /monuments./i,
@@ -20,11 +16,7 @@ describe("Given the App componenet", () => {
     });
 
     test("Then it should show a webside logo", () => {
-      render(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>,
-      );
+      render(<App />, { wrapper: MemoryRouter });
 
       const pageLogo = screen.getByAltText("Website logo");
 
@@ -32,11 +24,7 @@ describe("Given the App componenet", () => {
     });
 
     test("Then it should show links to Home and Add Monument page", () => {
-      render(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>,
-      );
+      render(<App />, { wrapper: MemoryRouter });
 
       const homeLink = screen.getByRole("link", { name: /home/i });
       const addMonumentLink = screen.getByRole("link", {
