@@ -1,16 +1,23 @@
 .button {
-  background-color: rgb(103, 32, 32);
   transition: all 0.3s;
   font-weight: bold;
-  color: rgb(255, 255, 255);
   text-align: center;
-
-  &:hover {
-    background-color: rgb(253, 69, 69);
-  }
+  background: none;
 
   &:focus {
-    outline: 3px solid rgb(255, 54, 235);
+    outline: 3px solid rgb(54, 67, 255);
+  }
+}
+
+.button--square {
+  padding: 5px 10px;
+  background-color: rgb(103, 32, 32);
+  color: rgb(255, 255, 255);
+  justify-self: flex-end;
+  align-self: flex-end;
+
+  &:hover {
+    opacity: 0.5;
   }
 
   &:disabled {
@@ -20,19 +27,28 @@
   }
 }
 
-.button--square {
-  padding: 5px 10px;
-  justify-self: flex-end;
-  align-self: flex-end;
-}
-
 .button--delete {
   position: absolute;
-  background-color: red;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   right: 15px;
   top: 15px;
 
   &:hover {
     opacity: 0.5;
+  }
+}
+
+.button--menu {
+  display: inline;
+  font-size: 1.8rem;
+  background: none;
+
+  &:active {
+    outline: none;
+  }
+
+  @media (width >= 700px) {
+    display: none;
   }
 }
