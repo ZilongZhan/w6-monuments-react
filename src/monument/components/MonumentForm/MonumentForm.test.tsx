@@ -1,19 +1,12 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router";
 import MonumentForm from "./MonumentForm";
-import MonumentsContextProvider from "../../context/MonumentsContextProvider";
+import AllContextsProvider from "../../../test-utils/AllContextsProvider/AllContextsProvider";
 
 describe("Given the MonumentForm component", () => {
   describe("When it renders", () => {
     test("Then it should show 'New monument' inside a heading", () => {
-      render(
-        <MonumentsContextProvider>
-          <MemoryRouter>
-            <MonumentForm />
-          </MemoryRouter>
-        </MonumentsContextProvider>,
-      );
+      render(<MonumentForm />, { wrapper: AllContextsProvider });
 
       const formTitle = screen.getByRole("heading", { name: /new monument/i });
 
@@ -21,13 +14,7 @@ describe("Given the MonumentForm component", () => {
     });
 
     test("Then it should show a 'Name:' input", () => {
-      render(
-        <MonumentsContextProvider>
-          <MemoryRouter>
-            <MonumentForm />
-          </MemoryRouter>
-        </MonumentsContextProvider>,
-      );
+      render(<MonumentForm />, { wrapper: AllContextsProvider });
 
       const nameInput = screen.getByLabelText(/^name/i);
 
@@ -35,13 +22,7 @@ describe("Given the MonumentForm component", () => {
     });
 
     test("Then it should show a 'Create monument' button", () => {
-      render(
-        <MonumentsContextProvider>
-          <MemoryRouter>
-            <MonumentForm />
-          </MemoryRouter>
-        </MonumentsContextProvider>,
-      );
+      render(<MonumentForm />, { wrapper: AllContextsProvider });
 
       const createMonumentButton = screen.getByRole("button", {
         name: /create monument/i,
@@ -54,18 +35,13 @@ describe("Given the MonumentForm component", () => {
   describe("When the user types 'Hello World' inside 'Name' input", () => {
     test("Then it should show 'Hello World' inside 'Name' input", async () => {
       const expectedInput = "Hello World";
+      const user = userEvent.setup();
 
-      render(
-        <MonumentsContextProvider>
-          <MemoryRouter>
-            <MonumentForm />
-          </MemoryRouter>
-        </MonumentsContextProvider>,
-      );
+      render(<MonumentForm />, { wrapper: AllContextsProvider });
 
       const nameInput = screen.getByLabelText(/^name/i);
 
-      await userEvent.type(nameInput, expectedInput);
+      await user.type(nameInput, expectedInput);
 
       expect(nameInput).toHaveValue(expectedInput);
     });
