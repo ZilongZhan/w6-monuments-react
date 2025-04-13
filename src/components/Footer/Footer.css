@@ -1,0 +1,8 @@
+.main-footer {
+  text-align: center;
+  font-size: 1.2rem;
+  align-self: flex-end;
+  font-weight: bold;
+  padding: 30px;
+  align-self: stretch;
+}

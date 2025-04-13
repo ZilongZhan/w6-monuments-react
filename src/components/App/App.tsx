@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 import "./App.css";
 
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <div className="main-content">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 };
