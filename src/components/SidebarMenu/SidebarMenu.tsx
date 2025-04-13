@@ -1,8 +1,8 @@
 import { NavLink } from "react-router";
+import { useEffect } from "react";
 import Button from "../../monument/components/shared/Button/Button";
 
 import "./SidebarMenu.css";
-import { useEffect } from "react";
 
 interface SidebarMenuProp {
   showSidebar: boolean;
@@ -32,7 +32,11 @@ const SidebarMenu: React.FC<SidebarMenuProp> = ({
       {showSidebar && (
         <div className="backdrop">
           <nav className="sidebar-menu">
-            <Button action={handleSetShowSidebar} aria-label="Close sidebar">
+            <Button
+              modifier="close"
+              action={handleSetShowSidebar}
+              aria-label="Close sidebar"
+            >
               ✖
             </Button>
             <ul className="navigation-list navigation-list--vertical">

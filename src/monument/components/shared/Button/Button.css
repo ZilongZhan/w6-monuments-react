@@ -3,10 +3,6 @@
   font-weight: bold;
   text-align: center;
   background: none;
-
-  &:focus {
-    outline: 3px solid rgb(54, 67, 255);
-  }
 }
 
 .button--square {
@@ -44,11 +40,13 @@
   font-size: 1.8rem;
   background: none;
 
-  &:active {
-    outline: none;
-  }
-
   @media (width >= 700px) {
     display: none;
+  }
+}
+
+.button--close {
+  &:hover {
+    color: rgb(255, 0, 0);
   }
 }
