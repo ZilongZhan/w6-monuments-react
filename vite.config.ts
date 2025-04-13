@@ -19,7 +19,7 @@ export default defineConfig({
       reporter: ["text", "html"],
       reportsDirectory: "../coverage",
       include: ["**/*.{ts,tsx}"],
-      exclude: ["main.tsx"],
+      exclude: ["main.tsx", "**/types.*", "**/*.d.ts"],
     },
   },
 });
