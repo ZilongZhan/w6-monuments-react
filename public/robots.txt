@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /create-monument   # You might want to exclude this if it's just a form
+Allow: /                     # Allow all other content
+Sitemap: https://example.com/sitemap.xml  # Add your sitemap URL if you have one
