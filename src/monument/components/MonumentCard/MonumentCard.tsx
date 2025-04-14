@@ -24,8 +24,8 @@ const MonumentCard: React.FC<MonumentCardProps> = ({
         className="monument__image"
         src={imageUrl}
         alt={imageAlt}
-        width="220"
-        height="147"
+        width="300"
+        height="200"
       />
       <p className="monument__description">{description}</p>
       <span className="monument__location">{`${city}, ${country}`}</span>
